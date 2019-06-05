@@ -2,9 +2,9 @@
  * @Author: Tony
  * @Date: 2019-06-03 15:59:26
  * @Last Modified by: Tony
- * @Last Modified time: 2019-06-04 14:13:39
+ * @Last Modified time: 2019-06-04 17:13:07
  */
-import { createSwitchNavigator, createStackNavigator, } from 'react-navigation';
+import { createSwitchNavigator, createStackNavigator, createDrawerNavigator, } from 'react-navigation';
 import SplashPage from '../page/SplashPage';
 import { createNavigationReducer, createReduxContainer, createReactNavigationReduxMiddleware, } from 'react-navigation-redux-helpers';
 import { connect, } from 'react-redux';
@@ -12,6 +12,19 @@ import HomePage from '../page/HomePage';
 import LoginPage from '../page/LoginPage';
 import PhoneLoginPage from '../page/PhoneLoginPage';
 import PasswordPage from '../page/PasswordPage';
+import SettingPage from '../page/SettingPage';
+import SearchPage from '../page/SearchPage';
+
+const HomeNavigator = createDrawerNavigator({
+  Home: {
+    screen: HomePage,
+    navigationOptions: {
+      header: null,
+    },
+  },
+}, {
+  contentComponent: SettingPage,
+});
 
 const MainNavigator = createStackNavigator({
   Login: {
@@ -21,7 +34,7 @@ const MainNavigator = createStackNavigator({
     },
   },
   Home: {
-    screen: HomePage,
+    screen: HomeNavigator,
     navigationOptions: {
       header: null,
     },
@@ -34,6 +47,9 @@ const MainNavigator = createStackNavigator({
   },
   Password: {
     screen: PasswordPage,
+  },
+  Search: {
+    screen: SearchPage,
   },
 });
 

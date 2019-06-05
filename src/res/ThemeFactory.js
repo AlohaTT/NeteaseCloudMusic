@@ -32,6 +32,8 @@ export const ColorFlags = {
   Black: '#000000',
   White: '#FFFFFF',
   Background:'#F3F7F9',
+  Transparent:'#00000000',
+
 };
 
 export const DimenFlags ={

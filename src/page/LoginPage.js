@@ -18,7 +18,6 @@ class LoginPage extends Component {
     };
   }
 
-
   _onPress = () => {
     const { navigation, } = this.props;
     if (this.state.agree) {
